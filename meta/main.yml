@@ -1,0 +1,16 @@
+---
+galaxy_info:
+  author: Ian Copp
+  description: Install a DuckDNS updater via Homebrew. Does nothing on non-macOS platforms.
+  license: MIT
+  min_ansible_version: 1.2
+  platforms:
+    - name: MacOSX
+      versions:
+        - all
+  galaxy_tags:
+    - networking
+
+dependencies:
+  - role: icopp.homebrew
+    when: ansible_os_family == "Darwin"

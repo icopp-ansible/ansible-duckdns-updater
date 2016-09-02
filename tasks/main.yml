@@ -1,0 +1,29 @@
+---
+- vars_prompt:
+    - name: duckdns_subdomain
+      prompt: Enter subdomain for DuckDNS
+      when: duckdns_subdomain == ""
+
+    - name: duckdns_token
+      prompt: Enter token for DuckDNS subdomain
+      when: duckdns_token == ""
+
+- name: Install DuckDNS background service
+  package:
+    name: jzelinskie/duckdns/duckdns
+    state: present
+  when: ansible_os_family == "Darwin"
+
+- name: Configure DuckDNS background service
+  template:
+    src: duckdns.conf.j2
+    dest: $HOME/.duckdns
+  when: ansible_os_family == "Darwin"
+
+- name: Set up DuckDNS LaunchAgent
+  command: ln -sfv /usr/local/opt/duckdns/*.plist ~/Library/LaunchAgents
+  when: ansible_os_family == "Darwin"
+
+- name: Run DuckDNS LaunchAgent
+  command: launchctl load ~/Library/LaunchAgents/homebrew.mxcl.duckdns.plist
+  when: ansible_os_family == "Darwin"
