@@ -1,6 +1,6 @@
 # ansible-duckdns-updater
 
-Install a DuckDNS updater via Homebrew. Does nothing on non-macOS platforms.
+Install a DuckDNS updater via Homebrew.
 
 ## Role Variables
 
@@ -8,7 +8,7 @@ Install a DuckDNS updater via Homebrew. Does nothing on non-macOS platforms.
 
 ## Dependencies
 
-* [icopp.homebrew](https://github.com/icopp/ansible-homebrew) (included as repository dependency)
+* [icopp.homebrew](https://github.com/icopp/ansible-homebrew)
 
 ## Example Playbook
 
