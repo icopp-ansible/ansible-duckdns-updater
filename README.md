@@ -4,7 +4,7 @@ Install a DuckDNS updater via Homebrew.
 
 ## Role Variables
 
-`duckdns_subdomain` and `duckdns_token` will be prompted for if not supplied.
+`duckdns_subdomain` and `duckdns_token` must be supplied or all tasks will be skipped.
 
 ## Dependencies
 
