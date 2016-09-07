@@ -16,17 +16,9 @@ Install a DuckDNS updater via Homebrew.
   - hosts: all
     roles:
       - role: icopp.duckdns-updater
-```
-
-```
-  - hosts: all
-    roles:
-      - role: icopp.duckdns-updater
         duckdns_subdomain: xxxxx
         duckdns_token: xxxxx
-
 ```
-
 
 ## License
 
