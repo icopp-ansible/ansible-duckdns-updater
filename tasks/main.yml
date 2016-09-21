@@ -1,5 +1,5 @@
 ---
-- name: Install DuckDNS background service
+- name: Install DuckDNS background service via Homebrew
   package:
     name: jzelinskie/duckdns/duckdns
     state: present
@@ -11,10 +11,6 @@
     dest: $HOME/.duckdns
   when: ansible_os_family == "Darwin" and duckdns_subdomain != "" and duckdns_token != ""
 
-- name: Set up DuckDNS LaunchAgent
-  command: ln -sfv /usr/local/opt/duckdns/*.plist ~/Library/LaunchAgents
-  when: ansible_os_family == "Darwin" and duckdns_subdomain != "" and duckdns_token != ""
-
-- name: Run DuckDNS LaunchAgent
-  command: launchctl load ~/Library/LaunchAgents/homebrew.mxcl.duckdns.plist
+- name: Run DuckDNS background service at login
+  command: brew services start duckdns
   when: ansible_os_family == "Darwin" and duckdns_subdomain != "" and duckdns_token != ""

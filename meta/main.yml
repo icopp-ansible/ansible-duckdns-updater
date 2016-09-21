@@ -14,3 +14,5 @@ galaxy_info:
 dependencies:
   - role: icopp.homebrew
     when: ansible_os_family == "Darwin"
+  - role: icopp.homebrew-services
+    when: ansible_os_family == "Darwin"

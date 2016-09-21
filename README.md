@@ -9,6 +9,7 @@ Install a DuckDNS updater via Homebrew.
 ## Dependencies
 
 * [icopp.homebrew](https://github.com/icopp/ansible-homebrew)
+* [icopp.homebrew-services](https://github.com/icopp/ansible-homebrew-services)
 
 ## Example Playbook
 
